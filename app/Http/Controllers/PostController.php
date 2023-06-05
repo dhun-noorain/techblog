@@ -69,8 +69,8 @@ class PostController extends Controller
         $tags = explode(',', $post->tags);
         $len = count($tags);
         if ($len > 1) {
-            $tag1 = $tags[rand(0, $len-1)];
-            $tag2 = $tags[rand(0, $len-2)];
+            $tag1 = $tags[rand(0, $len - 1)];
+            $tag2 = $tags[rand(0, $len - 2)];
         } else {
             $tag1 = $tags[0];
             $tag2 = 'html';
