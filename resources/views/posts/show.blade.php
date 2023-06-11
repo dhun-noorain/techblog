@@ -23,7 +23,7 @@
 				@endphp
 				@foreach($tags as $tag)
 				<a href="{{ route('search', trim($tag)) }}" class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800 text-transform:capitalize hover:underline">
-          <x-tag></x-tag>{{ $tag }}
+          <x-svg.tag></x-svg.tag>{{ $tag }}
 				</a>
 				@endforeach
 			</div>
@@ -42,6 +42,29 @@
 			<p>
 				{!! $post->body !!}
 			</p>
+		</div>
+		<div>
+			<h3 class="mb-4">Share on:</h3>
+			<div class="mb-6 flex items-center justify-start">
+				<a
+					href="javascript:void(0)"
+					class="mr-3 flex h-12 w-12 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-blue-500 hover:bg-blue-500 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+				>
+					<x-svg.facebook></x-svg.facebook>
+				</a>
+				<a
+					href="javascript:void(0)"
+					class="mr-3 flex h-12 w-12 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-blue-400 hover:bg-blue-400 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+				>
+					<x-svg.twitter></x-svg.twitter>
+				</a>
+				<a
+					href="javascript:void(0)"
+					class="mr-3 flex h-12 w-12 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-blue-600 hover:bg-blue-600 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+				>
+					<x-svg.linkedin></x-svg.linkedin>
+				</a>
+			</div>
 		</div>
 	</article>
 	<div class="w-full md:max-w-[80%] px-6 py-4 mx-auto space-y-16">

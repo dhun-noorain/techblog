@@ -33,4 +33,75 @@
             </main>
         </div>
     </body>
+
+    <!-- footer -->
+    @guest
+    <footer class="relative z-10 bg-white pt-20 pb-10 lg:pt-[120px] lg:pb-20">
+      <div class="container mx-auto">
+        <div class="-mx-4 flex flex-wrap justify-between items-center text-center md:text-left">
+          <div class="w-full px-4 md:w-1/2">
+            <div class="mb-10 w-full">
+              <a
+                href="javascript:void(0)"
+                class="mb-6 inline-block max-w-[160px]"
+              >
+                <img
+                  src="assets/images/logo/logo.svg"
+                  alt="logo"
+                  class="max-w-full"
+                />
+              </a>
+              <p class="mb-7 text-base text-body-color">
+                For support and enquiries, contact our admin through.
+              </p>
+              <p class="flex items-center justify-center md:justify-start text-sm font-medium text-dark">
+                <span class="mr-3 text-primary">
+                  <x-svg.phone></x-svg.phone>
+                </span>
+                <span>+012 (345) 678 99</span>
+              </p>
+            </div>
+          </div>
+          <div class="w-full px-4 md:w-1/2">
+            <div class="mb-10 w-full md:text-right">
+              <h4 class="mb-9 text-lg font-semibold text-dark">Follow Us On</h4>
+              <div class="mb-6 flex items-center justify-center md:justify-end">
+                <a
+                  href="javascript:void(0)"
+                  class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                >
+                  <x-svg.facebook></x-svg.facebook>
+                </a>
+                <a
+                  href="javascript:void(0)"
+                  class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                >
+                  <x-svg.twitter></x-svg.twitter>
+                </a>
+                <a
+                  href="javascript:void(0)"
+                  class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                >
+                  <x-svg.youtube></x-svg.youtube>
+                </a>
+                <a
+                  href="javascript:void(0)"
+                  class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                >
+                  <x-svg.linkedin></x-svg.linkedin>
+                </a>
+              </div>
+              <p class="text-base text-body-color">&copy; 2025 TailGrids</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="absolute left-0 bottom-0 z-[-1]">
+          <x-svg.circle></x-svg.circle>
+        </span>
+      </div>
+    </footer>
+    @endguest
 </html>

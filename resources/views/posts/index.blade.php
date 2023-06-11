@@ -28,7 +28,7 @@
                             alt="Bonnie Green avatar" />
                         <span class="font-medium dark:text-white flex justify-between items-center my-2 sm:my-0">
                             {{ $post->user->name }}
-                            <x-pen></x-pen>
+                            <x-svg.pen></x-pen>
                         </span>
                     </div>
                     <span class="text-sm">{{ $post['created_at'] }}</span>
@@ -54,7 +54,7 @@
                         @foreach($tags as $tag)
                         <a href="{{ route('search', trim($tag)) }}"
                             class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800 text-transform:capitalize">
-                            <x-tag></x-tag>
+                            <x-svg.tag></x-tag>
                             {{ $tag }}
                         </a>
                         @endforeach
@@ -96,7 +96,7 @@
                     <a href="{{ route('posts.show', $post['id']) }}"
                         class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline my-2 sm:my-0">
                         Read more
-                        <x-right-arrow></x-right-arrow>
+                        <x-svg.right-arrow></x-right-arrow>
                     </a>
                     <!-- ====== Modal Section End -->
                     @endauth
