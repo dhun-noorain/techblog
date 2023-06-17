@@ -21,6 +21,11 @@ class ProfileController extends Controller
         ]);
     }
 
+    // show user (blog admin) info to the public
+    public function show($id): View {
+        return view('profile.shpw');
+    }
+
     /**
      * Update the user's profile information.
      */
