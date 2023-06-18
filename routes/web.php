@@ -29,6 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::get('/profile/{user}', [ProfileController::class, 'show'])
+        ->name('profile.show');
 
 Route::resource('posts', PostController::class)->middleware('auth');
 Route::withoutMiddleware(Auth::class)->group(function () {

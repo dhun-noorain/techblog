@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,8 +23,12 @@ class ProfileController extends Controller
     }
 
     // show user (blog admin) info to the public
-    public function show($id): View {
-        return view('profile.shpw');
+    public function show(Request $request): View {
+        $user = User::select('id', 'name', 'email')
+                ->where('id', $request->user)
+                ->get()[0];
+                
+        return view('profile.show', compact('user'));
     }
 
     /**
