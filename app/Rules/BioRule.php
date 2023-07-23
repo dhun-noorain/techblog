@@ -5,7 +5,7 @@ namespace App\Rules;
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
 
-class SummaryRule implements ValidationRule
+class BioRule implements ValidationRule
 {
     /**
      * Run the validation rule.
@@ -15,9 +15,9 @@ class SummaryRule implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         $count = array_filter(explode(' ', trim($value)));
-        $titleLength = count($count);
-        if ($titleLength > 50) {
-            $fail("Summary must not be greater than 50 words");
+        $bioLength = count($count);
+        if ($bioLength > 50) {
+            $fail("Bio must not be greater than 50 words");
         }
     }
 }

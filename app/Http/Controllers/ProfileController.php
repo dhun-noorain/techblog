@@ -18,17 +18,24 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+        if ($request->user()->social != null || $request->user()->social != "") {
+            $request->user()->social = join(',',
+                json_decode($request->user()->social)
+            );
+        }
+
         return view('profile.edit', [
             'user' => $request->user(),
         ]);
     }
 
     // show user (blog admin) info to the public
-    public function show(Request $request): View {
-        $user = User::select('id', 'name', 'email')
-                ->where('id', $request->user)
-                ->get()[0];
-                
+    public function show(Request $request): View
+    {
+        $user = User::select('id', 'name', 'email', 'picture')
+            ->where('id', $request->user)
+            ->get()[0];
+
         return view('profile.show', compact('user'));
     }
 
@@ -37,12 +44,24 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $image = $request->validated()['picture'];
-        $imageName = $request->user()->name . '.' . $image->extension();
+        $old = User::select('picture')
+            ->where('id', $request->user()->id)
+            ->get()[0]['picture'];
 
-        $validated['name'] = $request->validated()['name'];
-        $validated['email'] = $request->validated()['email'];
-        $validated['picture'] = $imageName;
+        $post = $request->validated();
+
+        if (key_exists('picture', $post)) {
+            $image = $post['picture'];
+            $imageName = $post['name'] . $request->user()->id . '.' . $image->extension();
+            $validated['picture'] = $imageName;
+        }
+
+        $validated['name'] = $post['name'];
+        $validated['email'] = $post['email'];
+        $validated['bio'] = $post['bio'];
+        $validated['social'] = json_encode(
+            array_filter(explode(',', trim($request->social)))
+        );
 
         $request->user()->fill($validated);
 
@@ -50,8 +69,16 @@ class ProfileController extends Controller
             $request->user()->email_verified_at = null;
         }
 
-        if (Storage::putFileAs('userImg', $image, $imageName)) {
-            $request->user()->save();
+        if (key_exists('picture', $post) && !empty($old)) {
+            if (Storage::delete('/userImg/' . $old)) {
+                if (Storage::putFileAs('userImg', $image, $imageName)) {
+                    $request->user()->save();
+                }
+            }
+        } else {
+            if (Storage::putFileAs('userImg', $image, $imageName)) {
+                $request->user()->save();
+            }
         }
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');

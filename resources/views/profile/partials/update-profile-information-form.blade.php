@@ -13,14 +13,19 @@
         @csrf
     </form>
 
+    <section class="flex flex-wrap justify-center md:justify-start">
+        <figure class="w-6/12 sm:w-4/12 px-4">
+            <img src="{{ asset(implode('', ['storage/userImg/', $user->picture])) }}" alt="Display Picture" class="shadow rounded-full max-w-full h-auto align-middle border-none">
+        </figure>
+    </section>
     <form method="post" action="{{ route('profile.update') }}" enctype="multipart/form-data" class="mt-6 space-y-6">
         @csrf
         @method('patch')
 
         <div>
             <x-input-label for="picture" :value="__('Picture')" />
-            <input type="file" id="picture" name="picture" class="mt-1 block w-full" :value="old('picture')" required autofocus />
-            <x-input-error class="mt-2" :messages="$errors->get('picture')" />
+            <input type="file" id="picture" name="picture" type="text" class="mt-1 block w-full" :value="old('picture', $user->picture)" autofocus />
+            <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
         <div>
@@ -51,6 +56,19 @@
                     @endif
                 </div>
             @endif
+        </div>
+
+        <div>
+            <x-input-label :value="__('Bio')" for="bio" />
+            <x-text-area name="bio" id="bio"  placeholder="Bio here..." rows="10">{{old('bio', $user->bio)}}</x-text-area>
+            <x-input-error class="mt-2" :messages="$errors->get('bio')" />
+        </div>
+
+        <div>
+            <x-input-label :value="__('Social Media URLs')" for="social" />
+            <span class="text-blue-400">*Seperate links with a comma.</span>
+            <x-text-input id="social" name="social" type="text" class="mt-1 block w-full" :value="old('social', $user->social)" />
+            <x-input-error class="mt-2" :messages="$errors->get('social')" />
         </div>
 
         <div class="flex items-center gap-4">
