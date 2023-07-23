@@ -32,7 +32,7 @@ class ProfileController extends Controller
     // show user (blog admin) info to the public
     public function show(Request $request): View
     {
-        $user = User::select('id', 'name', 'email', 'picture')
+        $user = User::select('id', 'name', 'email', 'picture', 'bio', 'social')
             ->where('id', $request->user)
             ->get()[0];
 

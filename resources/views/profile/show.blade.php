@@ -37,14 +37,7 @@
               I am {{ $user->name }}
             </h2>
             <p class="mb-8 text-base text-body-color">
-              It is a long established fact that a reader will be distracted
-              by the readable content of a page when looking at its layout.
-              The point of using Lorem Ipsum is that it has a more-or-less.
-            </p>
-            <p class="mb-12 text-base text-body-color">
-              A domain name is one of the first steps to establishing your
-              brand. Secure a consistent brand image with a domain name that
-              matches your business.
+              {{ $user->bio }}
             </p>
             <section>
               Follow me on social media...
