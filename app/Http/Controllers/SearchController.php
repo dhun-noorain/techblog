@@ -14,7 +14,8 @@ class SearchController extends Controller
     public function __invoke(Request $request)
     {
         $posts = Post::where('tags', 'LIKE', "%$request->tag%")
-                    ->get();
+                    ->latest()
+                    ->paginate(10);
 
         return view('posts.index', compact('posts'));
     }

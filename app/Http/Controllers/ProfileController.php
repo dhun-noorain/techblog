@@ -75,10 +75,13 @@ class ProfileController extends Controller
                     $request->user()->save();
                 }
             }
-        } else {
+        } else if (key_exists('picture', $post)) {
             if (Storage::putFileAs('userImg', $image, $imageName)) {
                 $request->user()->save();
             }
+        } else {
+            $request->user()->save();
+
         }
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');

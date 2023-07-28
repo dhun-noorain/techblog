@@ -4,11 +4,6 @@
         {{ __($user->name) }}
     </h1>
   </x-slot>
-  <div class="px-6 py-4">
-    <x-button-link class="d-block float-right" href="{{ route('home') }}">
-      Back to Post
-    </x-button-link>
-  </div>
   <section class="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
     <div class="container mx-auto">
       <div class="flex flex-wrap items-center justify-around">
@@ -41,7 +36,50 @@
             </p>
             <section>
               Follow me on social media...
-              here
+              <div class="mt-4 flex align-center">
+                @php
+                  $social = json_decode($user->social);
+                @endphp
+
+                @empty($social)
+                  <div>
+                    $user->name has not added any social link to their page.
+                  </div>
+                  @else
+                    @foreach ($social as $platform)
+                      @php
+                        $scatter = explode('.', $platform);
+                      @endphp
+                      @switch ($scatter[1])
+                        @case('facebook')
+                          <x-link>
+                            <x-svg.facebook></x-svg.facebook>
+                          </x-link>
+                          @break
+                        @case('instagram')
+                          <x-link>
+                            <x-svg.facebook></x-svg.facebook>
+                          </x-link>
+                          @break
+                        @case('twitter')
+                          <x-link>
+                            <x-svg.twitter></x-svg.facebook>
+                          </x-link>
+                          @break
+                        @case('youtube')
+                          <x-link>
+                            <x-svg.youtube></x-svg.facebook>
+                          </x-link>
+                          @break
+                        @case('linkedin')
+                          <x-link>
+                            <x-svg.linkedin></x-svg.facebook>
+                          </x-link>
+                          @break
+                      @endswitch
+                    @endforeach
+                @endempty
+              </div>
             </section>
           </div>
         </div>

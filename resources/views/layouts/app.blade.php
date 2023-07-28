@@ -66,30 +66,18 @@
             <div class="mb-10 w-full md:text-right">
               <h4 class="mb-9 text-lg font-semibold text-dark">Follow Us On</h4>
               <div class="mb-6 flex items-center justify-center md:justify-end">
-                <a
-                  href="javascript:void(0)"
-                  class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
-                >
+                <x-link>
                   <x-svg.facebook></x-svg.facebook>
-                </a>
-                <a
-                  href="javascript:void(0)"
-                  class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
-                >
+                </x-link>
+                <x-link>
                   <x-svg.twitter></x-svg.twitter>
-                </a>
-                <a
-                  href="javascript:void(0)"
-                  class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
-                >
+                </x-link>
+                <x-link>
                   <x-svg.youtube></x-svg.youtube>
-                </a>
-                <a
-                  href="javascript:void(0)"
-                  class="mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-primary hover:bg-primary hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
-                >
+                </x-link>
+                <x-link>
                   <x-svg.linkedin></x-svg.linkedin>
-                </a>
+                </x-link>
               </div>
               <p class="text-base text-body-color">&copy; 2025 TailGrids</p>
             </div>

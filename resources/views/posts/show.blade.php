@@ -28,7 +28,7 @@
 				@endforeach
 			</div>
 			<p class="text-sm dark:text-gray-400">by
-				<a href="{{ route('profile.show', $post->user->id) }}" rel="noopener noreferrer" class="hover:underline dark:text-violet-400">
+				<a href="{{ route('profile.show', $post->user->id) }}" target="_blank" rel="noopener noreferrer" class="hover:underline dark:text-violet-400">
 					<span>{{ $post->user->name }}</span>
 				</a>on
 				<time datetime="{{ $post->created_at }}">
