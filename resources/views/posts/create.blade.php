@@ -13,7 +13,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
               <!-- post form -->
-                <form method="POST" action="{{ route('posts.store') }}">
+                <form method="POST" action="{{ route('posts.store') }}" class="px-4">
                     @csrf
 
                     <div>
@@ -49,7 +49,7 @@
                         <x-input-error :messages="$errors->get('tags')" class="my-2" />
                     </div>
 
-                    <x-primary-button>Post</x-primary-button>
+                    <x-primary-button class="my-4">Post</x-primary-button>
                 </form>
                 <!-- end form -->
             </div>

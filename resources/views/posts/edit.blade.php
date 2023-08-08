@@ -12,7 +12,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <!-- post form -->
-                <form method="POST" action="{{route('posts.update', $post['id'])}}">
+                <form method="POST" action="{{route('posts.update', $post['id'])}}" class="px-4">
                     @csrf
                     @method('PATCH')
                     <div>

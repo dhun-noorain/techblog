@@ -38,7 +38,7 @@
     @guest
     <footer class="relative z-10 bg-white pt-20 pb-10 lg:pt-[120px] lg:pb-20">
       <div class="container mx-auto">
-        <div class="-mx-4 flex flex-wrap justify-between items-center text-center md:text-left">
+        <div class="-mx-4 flex flex-wrap justify-around items-center text-center">
           <div class="w-full px-4 md:w-1/2">
             <div class="mb-10 w-full">
               <a
@@ -47,39 +47,31 @@
               >
                 <img
                   src="assets/images/logo/logo.svg"
-                  alt="logo"
+                  alt="Techblog Logo"
                   class="max-w-full"
                 />
               </a>
               <p class="mb-7 text-base text-body-color">
                 For support and enquiries, contact our admin through.
               </p>
-              <p class="flex items-center justify-center md:justify-start text-sm font-medium text-dark">
+              <p class="flex items-center justify-center text-sm font-medium text-dark">
                 <span class="mr-3 text-primary">
                   <x-svg.phone></x-svg.phone>
                 </span>
-                <span>+012 (345) 678 99</span>
+                <span>+234 7050 4043 33</span>
               </p>
             </div>
           </div>
           <div class="w-full px-4 md:w-1/2">
-            <div class="mb-10 w-full md:text-right">
+            <div class="mb-10 w-full">
               <h4 class="mb-9 text-lg font-semibold text-dark">Follow Us On</h4>
-              <div class="mb-6 flex items-center justify-center md:justify-end">
-                <x-link>
-                  <x-svg.facebook></x-svg.facebook>
-                </x-link>
-                <x-link>
-                  <x-svg.twitter></x-svg.twitter>
-                </x-link>
-                <x-link>
-                  <x-svg.youtube></x-svg.youtube>
-                </x-link>
-                <x-link>
-                  <x-svg.linkedin></x-svg.linkedin>
-                </x-link>
+              <div class="mb-6 flex items-center justify-center">
+                <x-svg.facebook></x-svg.facebook>
+                <x-svg.twitter></x-svg.twitter>
+                <x-svg.youtube></x-svg.youtube>
+                <x-svg.linkedin></x-svg.linkedin>
               </div>
-              <p class="text-base text-body-color">&copy; 2025 TailGrids</p>
+              <p class="text-base text-body-color">&copy; 2023 Techblog</p>
             </div>
           </div>
         </div>

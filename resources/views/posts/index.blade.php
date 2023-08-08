@@ -24,7 +24,7 @@
                 <div class="flex justify-between items-center flex-col sm:flex-row mb-5 text-gray-500">
                     <div class="flex items-center space-x-4 flex-col sm:flex-row">
                         <img class="w-7 h-7 rounded-full my-2 sm:my-0"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                            src="{{asset('storage/userImg/' . $post->user->picture) }}"
                             alt="Bonnie Green avatar" />
                         <span class="font-medium dark:text-white flex justify-between items-center my-2 sm:my-0">
                             {{ $post->user->name }}

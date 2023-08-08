@@ -46,22 +46,9 @@
 		<div>
 			<h3 class="mb-4">Share on:</h3>
 			<div class="mb-6 flex items-center justify-start">
-				<a
-					href="javascript:void(0)"
-					class="mr-3 flex h-12 w-12 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-blue-500 hover:bg-blue-500 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
-				>
-					<x-svg.facebook></x-svg.facebook>
-				</a>
-				<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button mr-3 flex h-12 w-12 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-blue-400 hover:bg-blue-400 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4" data-show-count="false">
-					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-					<x-svg.twitter></x-svg.twitter>
-				</a>
-				<a
-					href="javascript:void(0)"
-					class="mr-3 flex h-12 w-12 items-center justify-center rounded-full border border-[#E5E5E5] text-dark hover:border-blue-600 hover:bg-blue-600 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
-				>
-					<x-svg.linkedin></x-svg.linkedin>
-				</a>
+				<x-svg.facebook></x-svg.facebook>
+				<x-svg.twitter></x-svg.twitter>
+				<x-svg.linkedin></x-svg.linkedin>
 			</div>
 		</div>
 	</article>
